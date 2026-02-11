@@ -118,7 +118,12 @@ Price: $19.99 (50% off!)`);
               </div>
             </div>
             <div className="flex gap-2">
-              {["g", "i", "m", "s"].map((f) => (
+              {[
+                { f: "g", title: "Global - find all matches" },
+                { f: "i", title: "Case insensitive" },
+                { f: "m", title: "Multiline - ^ and $ match line boundaries" },
+                { f: "s", title: "Dotall - . matches newline" },
+              ].map(({ f, title }) => (
                 <button
                   key={f}
                   onClick={() => toggleFlag(f)}
@@ -127,7 +132,7 @@ Price: $19.99 (50% off!)`);
                       ? "bg-purple-600 text-white"
                       : "bg-gray-800 text-gray-400 hover:bg-gray-700"
                   }`}
-                  title={f === "g" ? "Global" : f === "i" ? "Case insensitive" : f === "m" ? "Multiline" : "Dotall"}
+                  title={title}
                 >
                   {f}
                 </button>

@@ -16,7 +16,23 @@ const commonPatterns = [
 export default function TesterPage() {
   const [pattern, setPattern] = useState("");
   const [flags, setFlags] = useState("g");
-  const [testText, setTestText] = useState("Hello world! My email is test@example.com and my phone is 123-456-7890.");
+  const [testText, setTestText] = useState(`Contact Information:
+Email: john.doe@example.com, support@company.org
+Phone: (123) 456-7890, 555-123-4567
+Website: https://www.example.com/path?query=123
+
+Server Details:
+IP Address: 192.168.1.1, 10.0.0.255
+Date: 2024-12-31, 2025-01-15
+Time: 14:30:00
+
+Design Tokens:
+Colors: #FF5733, #00FF00, #336699
+Numbers: 42, -17, 3.14159, 100
+
+Sample Text:
+The quick brown fox jumps over 99 lazy dogs.
+Price: $19.99 (50% off!)`);
   const [error, setError] = useState<string | null>(null);
 
   const { matches, highlightedText } = useMemo(() => {

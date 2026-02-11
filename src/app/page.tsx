@@ -24,7 +24,7 @@ const features = [
 
 export default function Home() {
   return (
-    <div>
+    <div className="min-h-[calc(100vh-3.5rem)] flex flex-col">
       {/* Hero */}
       <section className="relative overflow-hidden">
         <div className="pointer-events-none absolute inset-0">
@@ -54,7 +54,7 @@ export default function Home() {
       </section>
 
       {/* Features */}
-      <section className="mx-auto max-w-4xl px-4 pb-20">
+      <section className="mx-auto max-w-4xl px-4 pb-12 flex-1 flex items-start">
         <div className="grid gap-4 sm:grid-cols-3">
           {features.map((f) => (
             <Link
@@ -72,7 +72,9 @@ export default function Home() {
         </div>
       </section>
 
-      <Footer />
+      <div className="mt-auto">
+        <Footer />
+      </div>
     </div>
   );
 }
